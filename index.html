@@ -42,7 +42,7 @@
     <p>The app stores your radio planning inputs locally on the device using SharedPreferences (a local storage mechanism). This includes transmitter/receiver coordinates, frequency, antenna heights, advanced parameters, and terrain sampling preferences. These values remain on your device until you change or clear them.</p>
 
     <h3>Processing data sent to cloud API</h3>
-    <p>When you run a propagation calculation, the app sends the input parameters to a remote processing endpoint (the cloud API configured in the app) to perform the calculation and return results. The data sent typically includes the numeric parameters required for the radio model. The server returns calculation results and, optionally, plot images (which the app displays). The cloud API is controlled by the app owner; please contact the owner for details about storage/retention on the server.</p>
+    <p>When you run a propagation calculation, the app sends the input parameters to a remote processing endpoint (the cloud API configured in the app) to perform the calculation and return results. The data sent typically includes the numeric parameters required for the radio model. The server returns calculation results and, optionally, plot images (which the app displays). The cloud API is controlled by the app owner and no data is retained after the output is returned via API.</p>
 
     <h3>Messages you submit</h3>
     <p>If you use the “Send Message” or feedback feature, the app stores your message text in a Google Sheet (Sheet2) used by the app owner as an inbox. The message may include your name, subject, contact email/phone if you provide them. These entries are visible to whoever has access to the Google Sheet.</p>
@@ -61,7 +61,7 @@
     <h2>4. Sharing and Disclosure</h2>
     <p>We do not sell your personal information. We may share information with:</p>
     <ul>
-      <li>Service providers that host or process your requests (for example the cloud API used to run propagation calculations);</li>
+      <li>Service providers that host or process your requests (for example the Google maps elevation API used to get elevation data to run propagation calculations);</li>
       <li>Google Sheets (the Google account configured in the app) when you submit a message; those sheet contents are accessible to whoever owns the sheet;</li>
       <li>Law enforcement or government authorities when required by law.</li>
     </ul>
@@ -78,14 +78,11 @@
     <p>This unlocked build does not collect payments, nor does it process payment details. If you are using a different edition of the app that includes purchases, payment information is handled by the payment provider (for example Google Play) and not stored by the app.</p>
 
     <h2>7. Data retention</h2>
-    <p>Local input parameters are stored until you change them or uninstall the app. Messages written to the Google Sheet are retained until the sheet owner edits or deletes them. For information about how long the cloud API retains processing data, contact the app owner (see contact information below).</p>
+    <p>Local input parameters are stored until you change them or uninstall the app. Messages written to the Google Sheet are retained until the sheet owner edits or deletes them.</p>
 
     <h2>8. Security</h2>
-    <p>We take reasonable measures to protect your information on the device and in transit (HTTPS for API calls). However, no system is completely secure — avoid sending highly sensitive personal data through the app or in messages to the sheet. If your installation or the app includes service account credentials embedded in the app package, note that embedding credentials in a client app is not best practice; consider moving sensitive operations to a backend service under your control.</p>
+    <p>We take reasonable measures to protect your information on the device and in transit (HTTPS for API calls). However, no system is completely secure — avoid sending highly sensitive personal data through the app or in messages to the sheet.</p>
 
-    <div class="note">
-      <strong>Security note:</strong> If this app contains an embedded `credentials.json` (a Google service account file) as an asset to read sheets, that file can expose access to the referenced Google Sheets. It is recommended to move sensitive sheet operations to a secure backend and not ship service account credentials in the mobile app.
-    </div>
 
     <h2>9. Children</h2>
     <p>The app is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 provided information, contact us and we will delete it.</p>
@@ -97,7 +94,7 @@
     <p>We may update this Privacy Policy from time to time. If we make material changes we will update the effective date. Continued use of the app after changes indicates acceptance of the new policy.</p>
 
     <h2>12. Contact</h2>
-    <p>For privacy questions or data requests, contact: <a href="mailto:pinchiyadav@gmail.com">pinchiyadav@gmail.com</a></p>
+    <p>For privacy questions or data requests, contact: <a href="mailto:y321yogesh@gmail.com">y321yogesh@gmail.com</a></p>
 
     <footer>
       RF Path Profiler • Version 1.0 • Effective: November 14, 2025
