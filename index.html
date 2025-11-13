@@ -1,169 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – RF Path Profiler</title>
+  <meta charset="utf-8" />
+  <title>Privacy Policy — RF Path Profiler</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
-    }
-    h1, h2 {
-      color: #1a4fa3;
-    }
-    a {
-      color: #1a73e8;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; line-height:1.6; margin:0; padding:24px; background:#f9fafb; }
+    .container { max-width:900px; margin:32px auto; background:#fff; padding:28px 32px; border-radius:10px; box-shadow:0 6px 22px rgba(16,24,40,0.06); }
+    h1 { font-size:22px; margin:0 0 8px; color:#1f2937; }
+    h2 { font-size:16px; margin-top:20px; color:#111827; }
+    p { margin:12px 0; color:#374151; }
+    ul { margin:8px 0 12px 20px; color:#374151; }
+    a { color:#0ea5b7; text-decoration:underline; }
+    .note { background:#fffbeb; border-left:4px solid #f59e0b; padding:10px 12px; border-radius:6px; color:#92400e; margin:14px 0; }
+    footer { font-size:13px; color:#6b7280; margin-top:18px; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective date:</strong> November 14, 2025</p>
 
-<h1>Privacy Policy – RF Path Profiler</h1>
-<p><strong>Last updated:</strong> February 2025</p>
+    <p>This Privacy Policy explains how <strong>RF Path Profiler</strong> (the "app", "we", "us") collects, uses, and shares information when you use the app. By using the app you agree to the practices described in this policy.</p>
 
-<p>
-  RF Path Profiler app (“the App”) is developed and maintained by 
-  <strong>Yogesh Yadav</strong>.  
-  This Privacy Policy explains how your data is collected, used, and protected.
-</p>
+    <h2>1. Summary</h2>
+    <p>RF Path Profiler is a radio propagation planning tool. The app:</p>
+    <ul>
+      <li>May request your device <strong>location</strong> to set transmitter/receiver coordinates or to show maps;</li>
+      <li>Stores your <strong>input parameters</strong> (coordinates, frequency, heights, advanced settings) locally on the device so they are available when the app restarts;</li>
+      <li>Sends the parameters to a remote processing API (your cloud service) to run the propagation calculation and returns results/plots;</li>
+      <li>Can send user messages to a Google Sheet (used as a simple inbox) when you use the “Send Message” feature;</li>
+      <li>Does <strong>not</strong> collect payment information in this unlocked build (no in-app purchases or UPI payments are processed by the app).</li>
+    </ul>
 
-<hr />
+    <h2>2. Information We Collect</h2>
 
-<h2>1. Information We Collect</h2>
+    <h3>Location information</h3>
+    <p>If you use features that require location (for example choosing transmitter or receiver positions on a map, or using device-based location input), the app will request location permission. Location is used only to populate coordinates and map display. You may deny or revoke location permission at any time; denying permission will not prevent you from using the majority of app features (you can manually enter coordinates).</p>
 
-<h3>1.1 Android Device Identifier (Android ID)</h3>
-<p>
-  The App collects your device’s <strong>Android ID</strong> for the following purposes:
-</p>
-<ul>
-  <li>To verify your device for licensing</li>
-  <li>To unlock paid features after purchase</li>
-  <li>To prevent unauthorized sharing or cloning of licensed access</li>
-</ul>
-<p>
-  The Android ID is stored securely in Google Sheets using encrypted API access.
-</p>
+    <h3>Input parameters</h3>
+    <p>The app stores your radio planning inputs locally on the device using SharedPreferences (a local storage mechanism). This includes transmitter/receiver coordinates, frequency, antenna heights, advanced parameters, and terrain sampling preferences. These values remain on your device until you change or clear them.</p>
 
-<h3>1.2 Google Play Billing Information</h3>
-<p>
-  The App uses <strong>Google Play Billing</strong> for purchasing the paid license.  
-  No sensitive financial information (such as bank details, card numbers, UPI IDs, etc.) is ever accessed or stored.
-</p>
+    <h3>Processing data sent to cloud API</h3>
+    <p>When you run a propagation calculation, the app sends the input parameters to a remote processing endpoint (the cloud API configured in the app) to perform the calculation and return results. The data sent typically includes the numeric parameters required for the radio model. The server returns calculation results and, optionally, plot images (which the app displays). The cloud API is controlled by the app owner; please contact the owner for details about storage/retention on the server.</p>
 
-<p>
-  Google only provides:
-</p>
-<ul>
-  <li>Purchase state (success/failure)</li>
-  <li>A transaction token needed to unlock the app</li>
-</ul>
+    <h3>Messages you submit</h3>
+    <p>If you use the “Send Message” or feedback feature, the app stores your message text in a Google Sheet (Sheet2) used by the app owner as an inbox. The message may include your name, subject, contact email/phone if you provide them. These entries are visible to whoever has access to the Google Sheet.</p>
 
-<p><strong>The App does not receive or store any payment credentials.</strong></p>
+    <h3>Technical and device information</h3>
+    <p>The app may collect non-personal technical information required for normal operation (app version, OS version, device model). The app does not collect analytics or crash logs unless you have explicitly enabled such a feature.</p>
 
-<h3>1.3 Optional User Messages</h3>
-<p>
-  If you contact support from within the app, the following may be stored:
-</p>
-<ul>
-  <li>Your name</li>
-  <li>Your message or feedback</li>
-  <li>Your contact email (optional)</li>
-</ul>
-<p>
-  These messages are stored in Google Sheets only for support and communication.
-</p>
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>To perform radio propagation calculations and display results to you;</li>
+      <li>To pre-fill forms and restore the last-used parameters when you re-open the app;</li>
+      <li>To send your messages to the app owner’s Google Sheet so they can respond;</li>
+      <li>To provide and improve the app’s features and fix bugs when you report them.</li>
+    </ul>
 
-<hr />
+    <h2>4. Sharing and Disclosure</h2>
+    <p>We do not sell your personal information. We may share information with:</p>
+    <ul>
+      <li>Service providers that host or process your requests (for example the cloud API used to run propagation calculations);</li>
+      <li>Google Sheets (the Google account configured in the app) when you submit a message; those sheet contents are accessible to whoever owns the sheet;</li>
+      <li>Law enforcement or government authorities when required by law.</li>
+    </ul>
 
-<h2>2. How Your Information Is Used</h2>
+    <h2>5. Third-party services used</h2>
+    <p>The app integrates with third-party services that have their own privacy policies:</p>
+    <ul>
+      <li><strong>Google Maps SDK</strong> — used to render maps and map tiles. Google’s privacy policy applies to map usage: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+      <li><strong>Geolocation APIs</strong> — used to obtain device coordinates when you allow location access;</li>
+      <li><strong>Google Sheets API</strong> via a service account — used to read/write certain app-controlled spreadsheets for message/remote configuration. The app owner controls the sheet and its access.</li>
+    </ul>
 
-<p>Your information is used exclusively for:</p>
-<ul>
-  <li>Managing license activation</li>
-  <li>Restoring purchases</li>
-  <li>Responding to support queries</li>
-  <li>Improving App performance</li>
-</ul>
+    <h2>6. Payments</h2>
+    <p>This unlocked build does not collect payments, nor does it process payment details. If you are using a different edition of the app that includes purchases, payment information is handled by the payment provider (for example Google Play) and not stored by the app.</p>
 
-<p><strong>No data is shared, sold, or used for advertising or tracking.</strong></p>
+    <h2>7. Data retention</h2>
+    <p>Local input parameters are stored until you change them or uninstall the app. Messages written to the Google Sheet are retained until the sheet owner edits or deletes them. For information about how long the cloud API retains processing data, contact the app owner (see contact information below).</p>
 
-<hr />
+    <h2>8. Security</h2>
+    <p>We take reasonable measures to protect your information on the device and in transit (HTTPS for API calls). However, no system is completely secure — avoid sending highly sensitive personal data through the app or in messages to the sheet. If your installation or the app includes service account credentials embedded in the app package, note that embedding credentials in a client app is not best practice; consider moving sensitive operations to a backend service under your control.</p>
 
-<h2>3. Data Storage & Security</h2>
+    <div class="note">
+      <strong>Security note:</strong> If this app contains an embedded `credentials.json` (a Google service account file) as an asset to read sheets, that file can expose access to the referenced Google Sheets. It is recommended to move sensitive sheet operations to a secure backend and not ship service account credentials in the mobile app.
+    </div>
 
-<p>
-  Collected data is stored securely using:
-</p>
-<ul>
-  <li><strong>Google Sheets API</strong> — protected by a private service account</li>
-  <li><strong>Local encrypted storage</strong> on the device</li>
-</ul>
+    <h2>9. Children</h2>
+    <p>The app is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 provided information, contact us and we will delete it.</p>
 
-<p>
-  All communication to Google APIs is encrypted using HTTPS.
-</p>
+    <h2>10. Your rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, or delete personal information. To exercise rights or ask questions, contact the app owner at the address below.</p>
 
-<hr />
+    <h2>11. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. If we make material changes we will update the effective date. Continued use of the app after changes indicates acceptance of the new policy.</p>
 
-<h2>4. Third-Party Services Used</h2>
+    <h2>12. Contact</h2>
+    <p>For privacy questions or data requests, contact: <a href="mailto:pinchiyadav@gmail.com">pinchiyadav@gmail.com</a></p>
 
-<p>
-  The App uses the following Google services:
-</p>
-<ul>
-  <li><strong>Google Play Billing</strong> — for secure purchase handling</li>
-  <li><strong>Google Maps SDK</strong> — for map display</li>
-  <li><strong>Google Elevation API</strong> — to fetch terrain elevation data</li>
-  <li><strong>Google Sheets API</strong> — to store license status</li>
-</ul>
-
-<p>
-  These services may collect anonymized technical data as described in their own privacy policies.
-</p>
-
-<hr />
-
-<h2>5. Children’s Privacy</h2>
-<p>
-  The App is not intended for children under the age of 13.  
-  No information is knowingly collected from children.
-</p>
-
-<hr />
-
-<h2>6. Your Rights</h2>
-<p>You can request:</p>
-<ul>
-  <li>Deletion of your Android ID from our database</li>
-  <li>Removal of past support messages</li>
-  <li>Clarification about what data is stored</li>
-</ul>
-
-<p>Contact information is provided below.</p>
-
-<hr />
-
-<h2>7. Contact Us</h2>
-
-<p>If you have questions about this Privacy Policy or want your data removed, contact:</p>
-
-<p>
-  <strong>Name:</strong> Yogesh Yadav<br />
-  <strong>Email:</strong> <a href="mailto:y321yogesh@gmail.com">y321yogesh@gmail.com</a>
-</p>
-
-<hr />
-
-<h2>8. Changes to This Policy</h2>
-<p>
-  This Privacy Policy may be updated as needed.  
-  You are encouraged to review this page periodically.
-</p>
-
+    <footer>
+      RF Path Profiler • Version 1.0 • Effective: November 14, 2025
+    </footer>
+  </div>
 </body>
 </html>
