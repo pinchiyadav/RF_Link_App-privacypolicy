@@ -9,6 +9,7 @@
     .container { max-width:900px; margin:32px auto; background:#fff; padding:28px 32px; border-radius:10px; box-shadow:0 6px 22px rgba(16,24,40,0.06); }
     h1 { font-size:22px; margin:0 0 8px; color:#1f2937; }
     h2 { font-size:16px; margin-top:20px; color:#111827; }
+    h3 { font-size:14px; margin-top:16px; color:#1f2937; }
     p { margin:12px 0; color:#374151; }
     ul { margin:8px 0 12px 20px; color:#374151; }
     a { color:#0ea5b7; text-decoration:underline; }
@@ -19,85 +20,107 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p><strong>Effective date:</strong> November 13, 2025</p>
+    <p><strong>Effective date:</strong> August 11, 2026</p>
 
-    <p>This Privacy Policy explains how <strong>RF Link - Signal Strength, LOS</strong> (the "app", "we", "us") collects, uses, and shares information when you use the app. By using the app you agree to the practices described in this policy.</p>
+    <p>This Privacy Policy explains how <strong>RF Link - Signal Strength, LOS</strong> (the "app", "we", "us") collects, uses, and shares information when you use the app. It applies to the app on both <strong>Google Play (Android)</strong> and the <strong>Apple App Store (iOS)</strong>. By using the app you agree to the practices described in this policy.</p>
 
     <h2>1. Summary</h2>
     <p>RF Link - Signal Strength, LOS is a radio propagation planning tool. The app:</p>
     <ul>
       <li>May request your device <strong>location</strong> to set transmitter/receiver coordinates or to show maps;</li>
       <li>Stores your <strong>input parameters</strong> (coordinates, frequency, heights, advanced settings) locally on the device so they are available when the app restarts;</li>
-      <li>Sends the parameters to a remote processing API (your cloud service) to run the propagation calculation and returns results/plots;</li>
-      <li>Can send user messages to a Google Sheet (used as a simple inbox) when you use the “Send Message” feature;</li>
-      <li>Does <strong>not</strong> collect payment information in this unlocked build (no in-app purchases or UPI payments are processed by the app).</li>
+      <li>Sends those parameters to a remote processing API operated by the app owner to run the propagation calculation, and returns results and plots;</li>
+      <li>Sends a <strong>per-device identifier</strong> to that same server to count your free monthly calculations, so the free trial works without you creating an account;</li>
+      <li>Can send user messages to a spreadsheet used as a simple inbox when you use the “Send Message” feature;</li>
+      <li>Offers optional <strong>in-app purchases</strong> — a one-time unlock and an auto-renewable monthly subscription — which are processed entirely by Apple or Google. We never receive or store your card or bank details.</li>
     </ul>
 
     <h2>2. Information We Collect</h2>
 
     <h3>Location information</h3>
-    <p>If you use features that require location (for example choosing transmitter or receiver positions on a map, or using device-based location input), the app will request location permission. Location is used only to populate coordinates and map display. You may deny or revoke location permission at any time; denying permission will not prevent you from using the majority of app features (you can manually enter coordinates).</p>
+    <p>If you use features that require location (for example choosing transmitter or receiver positions on a map, or using device-based location input), the app will request location permission. Location is used only to populate coordinates and map display, and only while you are using the app. You may deny or revoke location permission at any time; denying permission will not prevent you from using the majority of app features (you can manually enter coordinates).</p>
 
     <h3>Input parameters</h3>
-    <p>The app stores your radio planning inputs locally on the device using SharedPreferences (a local storage mechanism). This includes transmitter/receiver coordinates, frequency, antenna heights, advanced parameters, and terrain sampling preferences. These values remain on your device until you change or clear them.</p>
+    <p>The app stores your radio planning inputs locally on the device (using SharedPreferences on Android and the equivalent local storage on iOS). This includes transmitter/receiver coordinates, frequency, antenna heights, advanced parameters, and terrain sampling preferences. These values remain on your device until you change or clear them.</p>
 
-    <h3>Processing data sent to cloud API</h3>
-    <p>When you run a propagation calculation, the app sends the input parameters to a remote processing endpoint (the cloud API configured in the app) to perform the calculation and return results. The data sent typically includes the numeric parameters required for the radio model. The server returns calculation results and, optionally, plot images (which the app displays). The cloud API is controlled by the app owner and no data is retained after the output is returned via API.</p>
+    <h3>Processing data sent to the cloud API</h3>
+    <p>When you run a propagation calculation or generate a coverage map, the app sends the input parameters to a remote processing endpoint operated by the app owner. The data sent is the set of numeric parameters required for the radio model — coordinates, frequency, antenna heights, gains and losses. The server returns calculation results and, optionally, plot or heat-map images which the app displays. These calculation inputs are not stored after the result has been returned.</p>
+
+    <h3>Device identifier and free-trial usage</h3>
+    <p>The app allows a limited number of free calculations each month. So that this works without asking you to create an account or sign in, the app sends a <strong>per-device identifier</strong> to our server together with a count of how many free calculations have been used.</p>
+    <ul>
+      <li>On <strong>iOS</strong> this is Apple’s <em>identifierForVendor</em>, an identifier scoped to this developer’s apps. It is reset if you delete all of our apps from the device.</li>
+      <li>On <strong>Android</strong> this is the Android ID, which is reset by a factory reset.</li>
+    </ul>
+    <p>The record we store contains only this identifier, a usage count and the calendar month. It is <strong>not</strong> linked to your name, email address, Apple Account or Google Account, is <strong>not</strong> used for advertising, and is <strong>not</strong> used to track you across other companies’ apps or websites. The counter resets each month.</p>
 
     <h3>Messages you submit</h3>
-    <p>If you use the “Send Message” or feedback feature, the app stores your message text in a Google Sheet (Sheet2) used by the app owner as an inbox. The message may include your name, subject, contact email/phone if you provide them. These entries are visible to whoever has access to the Google Sheet.</p>
+    <p>If you use the “Send Message” or feedback feature, your message is stored in a spreadsheet used by the app owner as an inbox. The message may include your name, subject, and contact email or phone number if you choose to provide them. These entries are visible to the app owner.</p>
 
     <h3>Technical and device information</h3>
-    <p>The app may collect non-personal technical information required for normal operation (app version, OS version, device model). The app does not collect analytics or crash logs unless you have explicitly enabled such a feature.</p>
+    <p>The app may collect non-personal technical information required for normal operation (app version, operating system version, device model). The app does not collect analytics or crash logs unless you have explicitly enabled such a feature.</p>
 
     <h2>3. How We Use Your Information</h2>
     <ul>
       <li>To perform radio propagation calculations and display results to you;</li>
       <li>To pre-fill forms and restore the last-used parameters when you re-open the app;</li>
-      <li>To send your messages to the app owner’s Google Sheet so they can respond;</li>
+      <li>To count free monthly calculations and to recognise a valid purchase or subscription;</li>
+      <li>To send your messages to the app owner’s inbox so they can respond;</li>
       <li>To provide and improve the app’s features and fix bugs when you report them.</li>
     </ul>
 
     <h2>4. Sharing and Disclosure</h2>
-    <p>We do not sell your personal information. We may share information with:</p>
+    <p>We do not sell your personal information, and we do not share it with data brokers or advertisers. We may share information with:</p>
     <ul>
-      <li>Service providers that host or process your requests (for example the Google maps elevation API used to get elevation data to run propagation calculations);</li>
-      <li>Google Sheets (the Google account configured in the app) when you submit a message; those sheet contents are accessible to whoever owns the sheet;</li>
+      <li>Service providers that host or process your requests — principally Google Cloud Platform, which hosts the calculation API, the terrain data cache and the free-trial counter;</li>
+      <li>The elevation and mapping services used to obtain terrain data for the calculation;</li>
+      <li>Apple and Google, who process in-app purchases and tell the app whether a purchase is valid;</li>
       <li>Law enforcement or government authorities when required by law.</li>
     </ul>
 
     <h2>5. Third-party services used</h2>
     <p>The app integrates with third-party services that have their own privacy policies:</p>
     <ul>
-      <li><strong>Google Maps SDK</strong> — used to render maps and map tiles. Google’s privacy policy applies to map usage: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
-      <li><strong>Geolocation APIs</strong> — used to obtain device coordinates when you allow location access;</li>
-      <li><strong>Google Sheets API</strong> via a service account — used to read/write certain app-controlled spreadsheets for message/remote configuration. The app owner controls the sheet and its access.</li>
+      <li><strong>Google Maps SDK</strong> (Android and iOS) — used to render maps and map tiles. Google’s privacy policy applies to map usage: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li><strong>Geolocation services</strong> — used to obtain device coordinates when you allow location access;</li>
+      <li><strong>Google Cloud Platform</strong> — hosts the app owner’s backend, which performs the propagation and coverage calculations, holds the free-trial counter, and relays contact-form messages;</li>
+      <li><strong>Apple App Store / Google Play billing</strong> — process in-app purchases and subscriptions. Their respective privacy policies apply to the payment itself: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
     </ul>
+    <p>Messages you submit through the app are relayed to the owner’s inbox by the backend server; the app itself does not access the spreadsheet directly.</p>
 
-    <h2>6. Payments</h2>
-    <p>This unlocked build does not collect payments, nor does it process payment details. If you are using a different edition of the app that includes purchases, payment information is handled by the payment provider (for example Google Play) and not stored by the app.</p>
+    <h2>6. Payments and subscriptions</h2>
+    <p>The app offers optional in-app purchases: a <strong>one-time lifetime unlock</strong> and an <strong>auto-renewable monthly subscription</strong>. Both unlock unlimited calculations; the app is otherwise usable with a limited number of free calculations per month.</p>
+    <p>All payments are processed by <strong>Apple</strong> (App Store) or <strong>Google</strong> (Google Play), depending on where you installed the app. <strong>We never receive, see, or store your payment card, UPI or bank details.</strong> The app receives only a confirmation from the store that a purchase is valid.</p>
+    <p>The app stores locally whether you hold an active purchase. On Android it also stores the purchase token needed to manage or cancel a subscription on your behalf.</p>
+    <p>Subscriptions renew automatically for the same price and period until cancelled. You can view, manage or cancel a subscription at any time in your <strong>Apple Account settings</strong> (iOS) or <strong>Google Play subscriptions</strong> (Android). Cancelling stops future renewals; it does not retroactively refund the current period.</p>
 
     <h2>7. Data retention</h2>
-    <p>Local input parameters are stored until you change them or uninstall the app. Messages written to the Google Sheet are retained until the sheet owner edits or deletes them.</p>
+    <ul>
+      <li><strong>Local input parameters and purchase status</strong> — stored on your device until you change them, clear the app’s data, or uninstall the app.</li>
+      <li><strong>Calculation inputs</strong> — not retained after the result is returned.</li>
+      <li><strong>Free-trial records</strong> — the per-device identifier and usage count are retained while the app remains in use; the count resets each calendar month.</li>
+      <li><strong>Messages you submit</strong> — retained in the owner’s inbox until deleted by the owner.</li>
+    </ul>
 
     <h2>8. Security</h2>
-    <p>We take reasonable measures to protect your information on the device and in transit (HTTPS for API calls). However, no system is completely secure — avoid sending highly sensitive personal data through the app or in messages to the sheet.</p>
-
+    <p>We take reasonable measures to protect your information on the device and in transit (all API calls use HTTPS). However, no system is completely secure — please avoid sending highly sensitive personal data through the app or in messages to the app owner.</p>
 
     <h2>9. Children</h2>
-    <p>The app is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 provided information, contact us and we will delete it.</p>
+    <p>The app is a technical tool intended for a general and professional audience. It is not directed at children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided information, contact us and we will delete it.</p>
 
-    <h2>10. Your rights</h2>
-    <p>Depending on where you live, you may have rights to access, correct, or delete personal information. To exercise rights or ask questions, contact the app owner at the address below.</p>
+    <h2>10. Your rights and international transfers</h2>
+    <p>Depending on where you live, you may have rights to access, correct, delete, restrict or object to the processing of your personal information, and to receive a copy of it in a portable form. To exercise any of these rights, contact the app owner at the address below.</p>
+    <p>If you are in the <strong>European Economic Area or the United Kingdom</strong>: we process your information in order to provide the app you have requested (performance of a contract) and to operate the free-trial limit and keep the service secure (our legitimate interests). Where the app asks for location, that processing is based on the permission you grant, which you can withdraw at any time in your device settings. You also have the right to lodge a complaint with your local data protection supervisory authority.</p>
+    <p>The app owner’s servers run on Google Cloud Platform and are located outside the EEA and the UK, including in India. Where information is transferred internationally, we rely on the safeguards offered by the relevant cloud provider’s data-processing terms.</p>
 
     <h2>11. Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time. If we make material changes we will update the effective date. Continued use of the app after changes indicates acceptance of the new policy.</p>
+    <p>We may update this Privacy Policy from time to time. If we make material changes we will update the effective date at the top of this page. Continued use of the app after changes indicates acceptance of the new policy.</p>
 
     <h2>12. Contact</h2>
     <p>For privacy questions or data requests, contact: <a href="mailto:y321yogesh@gmail.com">y321yogesh@gmail.com</a></p>
 
     <footer>
-      RF Link - Signal Strength, LOS • Version 1.0 • Effective: November 14, 2025
+      RF Link - Signal Strength, LOS • Version 1.1 • Effective: August 11, 2026 • Applies to the Android and iOS apps
     </footer>
   </div>
 </body>
